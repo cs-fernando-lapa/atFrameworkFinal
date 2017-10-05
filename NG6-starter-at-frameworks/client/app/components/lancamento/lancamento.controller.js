@@ -14,12 +14,12 @@ class lancamentosController {
     delLancamento(id){
       this.lancamentosService.delLancamento(id)
       .then(data => this.lancamentosService.getLancamentos())
-      .then((lancamentos) => this.lancamentos = lancamento)
+      .then((lancamentos) => this.lancamentos = lancamentos)
     }
 
     updateLancamento(id){
       // carregar dados na lancamentoe em this.
-      this.titulo = this.lancamentos.titulo
+      this.nome = this.lancamentos.nome
       var lancamento = {};
       for(var i=0; i< this.lancamentos.length; i++){
         if(this.lancamentos[i].id == id){
@@ -28,6 +28,7 @@ class lancamentosController {
         }
       }
       this.up_id = lancamento.id
+      this.up_nome = lancamento.nome
       this.up_descricao = lancamento.descricao
       this.up_valor = lancamento.valor
       this.up_receita = lancamento.receita
@@ -39,20 +40,21 @@ class lancamentosController {
 
     putLancamento(){
       var data = Date.now();
-      this.lancamentosService.putLancamento(this.up_id, this.up_descricao, this.up_valor, this.up_receita, this.up_categoria, data, this.up_repeticoes, this.up_repetitividade)
+      this.lancamentosService.putLancamento(this.up_id,this.up_nome, this.up_descricao, this.up_valor, this.up_receita, this.up_categoria, data, this.up_repeticoes, this.up_repetitividade)
       .then(() => {
-        this.up_id = lancamento.id
-        this.up_descricao = lancamento.descricao
-        this.up_valor = lancamento.valor
-        this.up_receita = lancamento.receita
-        this.up_categoria = lancamento.categoria
-        this.up_data = lancamento.data
-        this.up_repeticoes = lancamento.repeticoes
-        this.up_repetitividade = lancamento.repetitividade
+        this.up_id = ''
+        this.up_nome = ''
+        this.up_descricao = ''
+        this.up_valor = ''
+        this.up_receita = ''
+        this.up_categoria = ''
+        this.up_data = ''
+        this.up_repeticoes = ''
+        this.up_repetitividade = ''
         return this.q.resolve('')
       })
       .then(data => this.lancamentosService.getLancamentos())
-      .then(lancamentos => this.lancamentos = lancamento)
+      .then(lancamentos => this.lancamentos = lancamentos)
 
     }
 }

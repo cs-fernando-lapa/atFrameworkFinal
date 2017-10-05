@@ -29,14 +29,9 @@
           <label for="exampleTextarea">Repetitividade</label>
           <textarea class="form-control" id="exampleTextarea" rows="3" ng-model="$ctrl.repetitividade" placeholder="Digite aqui seu texto" > </textarea>
         </div>
-        <div class="form-group">
-          <label >Imagem</label>
-          <input type="text" class="form-control" placeholder="Insira a url da sua imagem" ng-model="$ctrl.imagem">
-        </div>
         <button type="submit" id="submit" value="Submit" class="btn btn-primary">Submit</button>
     </form>
-    <!-- <lancamento ng-repeat="lancamento in $ctrl.lancamentos" lancamento={{lancamentos}}/> -->
-    <lancamentodiv></lancamentodiv>
+    <lancamentodiv ng-repeat="lancamento in $ctrl.lancamentos" lancamento={{lancamento}} />
 </div>
 
 <!-- Modal -->

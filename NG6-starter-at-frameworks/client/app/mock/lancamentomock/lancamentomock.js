@@ -43,14 +43,14 @@ function lancamentoMock($httpBackend, $log, storage) {
     for(let i=0; i<lancamentomock.length; i++){
       if(lancamentomock[i].id == _data.id)
       {
-        lancamentosmock[i].nome = _data.nome;
-        lancamentosmock[i].descricao = _data.descricao;
-        lancamentosmock[i].valor = _data.valor;
-        lancamentosmock[i].receita = _data.receita;
-        lancamentosmock[i].categoria = _data.categoria;
-        lancamentosmock[i].repeticoes = _data.repeticoes;
-        lancamentosmock[i].data = _data.data;
-        lancamentosmock[i].repetividade = _data.repetividade;
+        lancamentomock[i].nome = _data.nome;
+        lancamentomock[i].descricao = _data.descricao;
+        lancamentomock[i].valor = _data.valor;
+        lancamentomock[i].receita = _data.receita;
+        lancamentomock[i].categoria = _data.categoria;
+        lancamentomock[i].repeticoes = _data.repeticoes;
+        lancamentomock[i].data = _data.data;
+        lancamentomock[i].repetividade = _data.repetividade;
         break;
       }
     }

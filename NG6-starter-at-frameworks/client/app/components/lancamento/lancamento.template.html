@@ -1,10 +1,14 @@
 <div class="panel panel-default">
   <div class="panel-heading">Nome: {{lancamento.nome}}</div>
   <ul class="list-group">
-    <li class="list-group-item">Descricao: {{lancamento.descricao}}</li>
+    <li class="list-group-item">Descrição: {{lancamento.descricao}}</li>
+    <li class="list-group-item">Receita: {{lancamento.receita}}</li>
+    <li class="list-group-item">Categoria: {{lancamento.categoria}}</li>
+    <li class="list-group-item">Repetições: {{lancamento.repeticoes}}</li>
+    <li class="list-group-item">Repetitividade: {{lancamento.repetitividade}}</li>
   </ul>
   <div class="panel-body">
-    {{lancamento.valor}}
+    Valor: {{lancamento.valor}}
   </div>
   <button type="button" class="btn btn-danger" name="Delete" ng-click="$ctrl.delLancamento(lancamento.id)"> Delete</button>
   <button type="button" class="btn btn-primary" name="Put" ng-click="$ctrl.updateLancamento(lancamento.id)" data-toggle="modal" data-target="#myModal"> Atualizar </button>
