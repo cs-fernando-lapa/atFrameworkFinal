@@ -1,0 +1,38 @@
+<form name='userForm'>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">EMAIL</span>
+    <input name="emailAddress"
+           ng-model="data.email"
+           ng-minlength="10"
+           ng-maxlength="30"
+           required
+           type="email"
+           class="form-control"
+           placeholder="Username"
+           aria-describedby="basic-addon1">
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">PASSWORD</span>
+    <input ng-minlength="10" type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+  </div>
+
+  <br>
+
+  <div ng-messages="userForm.emailAddress.$error">
+      <div class='alert alert-danger' ng-message="required">
+        You forgot to enter your email address...
+      </div>
+      <div class='alert alert-danger' ng-message="minlength">
+        Your email address is too short...
+      </div>
+      <div class='alert alert-danger' ng-message="maxlength">
+        Your email address is too long...
+      </div>
+      <div class='alert alert-danger' ng-message="email">
+        You did not enter your email address correctly...
+      </div>
+  </div>
+
+  <button class='btn btn-primary' type='submit'> LOGAR </button>
+
+</form>

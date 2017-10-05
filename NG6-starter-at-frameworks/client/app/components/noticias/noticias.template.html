@@ -1,0 +1,11 @@
+<div class="panel panel-default">
+  <div class="panel-heading">{{noticia.titulo}}</div>
+  <ul class="list-group">
+    <li class="list-group-item">Autor: {{noticia.autor}}</li>
+  </ul>
+  <div class="panel-body">
+    {{noticia.mensagem}}
+  </div>
+  <button type="button" class="btn btn-danger" name="Delete" ng-click="$ctrl.delNoticia(noticia.id)"> Delete</button>
+  <button type="button" class="btn btn-primary" name="Put" ng-click="$ctrl.updateNoticia(noticia.id)" data-toggle="modal" data-target="#myModal"> Atualizar </button>
+</div>

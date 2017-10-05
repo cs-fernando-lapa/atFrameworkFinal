@@ -1,0 +1,61 @@
+<div>
+    <form ng-submit="$ctrl.postNoticia()" >
+      Escreva aqui sua noticia:
+        <div class="form-group">
+          <label for="exampleInputEmail1">Título da Notícia</label>
+          <input type="text" class="form-control"  placeholder="Entre com o título" ng-model="$ctrl.titulo">
+        </div>
+        <div class="form-group">
+          <label >autor</label>
+          <input type="text" class="form-control" placeholder="Autor" ng-model="$ctrl.autor">
+        </div>
+        <div class="form-group">
+          <label for="exampleTextarea">Mensagem</label>
+          <textarea class="form-control" id="exampleTextarea" rows="3" ng-model="$ctrl.mensagem" placeholder="Digite aqui seu texto" > </textarea>
+        </div>
+        <div class="form-group">
+          <label >Imagem</label>
+          <input type="text" class="form-control" placeholder="Insira a url da sua imagem" ng-model="$ctrl.imagem">
+        </div>
+        <button type="submit" id="submit" value="Submit" class="btn btn-primary">Submit</button>
+    </form>
+    <notice ng-repeat="noticia in $ctrl.noticias" noticia={{noticia}}/>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <form ng-submit="$ctrl.putNoticia()" >
+          Escreva aqui sua noticia:
+            <div class="form-group">
+              <label for="exampleInputEmail1">Título da Notícia</label>
+              <input type="text" class="form-control"  placeholder="Entre com o título" ng-model="$ctrl.up_titulo">
+            </div>
+            <div class="form-group">
+              <label >autor</label>
+              <input type="text" class="form-control" placeholder="Autor" ng-model="$ctrl.up_autor">
+            </div>
+            <div class="form-group">
+              <label for="exampleTextarea">Mensagem</label>
+              <textarea class="form-control" id="exampleTextarea" rows="3" ng-model="$ctrl.up_mensagem" placeholder="Digite aqui seu texto" > </textarea>
+            </div>
+            <div class="form-group">
+              <label >Imagem</label>
+              <input type="text" class="form-control" placeholder="Insira a url da sua imagem" ng-model="$ctrl.up_imagem">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" id="submit" value="Submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,91 @@
+<div>
+    <form ng-submit="$ctrl.postLancamento()" >
+      Escreva aqui sua lancamento:
+      <div class="form-group">
+        <label for="exampleInputEmail1">Nome</label>
+        <input type="text" class="form-control"  placeholder="Entre com o título" ng-model="$ctrl.nome">
+      </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Descrição</label>
+          <input type="text" class="form-control"  placeholder="Entre com o título" ng-model="$ctrl.descricao">
+        </div>
+        <div class="form-group">
+          <label >Valor</label>
+          <input type="text" class="form-control" placeholder="Valor" ng-model="$ctrl.valor">
+        </div>
+        <div class="form-group">
+          <label for="exampleTextarea">Receita</label>
+          <textarea class="form-control" id="exampleTextarea" rows="3" ng-model="$ctrl.receita" placeholder="Digite aqui seu texto" > </textarea>
+        </div>
+        <div class="form-group">
+          <label for="exampleTextarea">Categoria</label>
+          <textarea class="form-control" id="exampleTextarea" rows="3" ng-model="$ctrl.categoria" placeholder="Digite aqui seu texto" > </textarea>
+        </div>
+        <div class="form-group">
+          <label for="exampleTextarea">Repetições</label>
+          <textarea class="form-control" id="exampleTextarea" rows="3" ng-model="$ctrl.repeticoes" placeholder="Digite aqui seu texto" > </textarea>
+        </div>
+        <div class="form-group">
+          <label for="exampleTextarea">Repetitividade</label>
+          <textarea class="form-control" id="exampleTextarea" rows="3" ng-model="$ctrl.repetitividade" placeholder="Digite aqui seu texto" > </textarea>
+        </div>
+        <div class="form-group">
+          <label >Imagem</label>
+          <input type="text" class="form-control" placeholder="Insira a url da sua imagem" ng-model="$ctrl.imagem">
+        </div>
+        <button type="submit" id="submit" value="Submit" class="btn btn-primary">Submit</button>
+    </form>
+    <!-- <lancamento ng-repeat="lancamento in $ctrl.lancamentos" lancamento={{lancamentos}}/> -->
+    <lancamentodiv></lancamentodiv>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <form ng-submit="$ctrl.putLancamento()" >
+          Escreva aqui sua lancamento:
+            <div class="form-group">
+              <label for="exampleInputEmail1">Nome</label>
+              <input type="text" class="form-control"  placeholder="Entre com o título" ng-model="$ctrl.up_nome">
+            </div>
+            <div class="form-group">
+              <label >Descrição</label>
+              <input type="text" class="form-control" placeholder="Descrição" ng-model="$ctrl.up_descricao">
+            </div>
+            <div class="form-group">
+              <label for="exampleTextarea">Valor</label>
+              <textarea class="form-control" id="exampleTextarea" rows="3" ng-model="$ctrl.up_valor" placeholder="Digite aqui seu texto" > </textarea>
+            </div>
+            <div class="form-group">
+              <label for="exampleTextarea">Receita</label>
+              <input type="text" class="form-control" placeholder="Insira a url da sua imagem" ng-model="$ctrl.up_receita">
+            </div>
+            <div class="form-group">
+              <label for="exampleTextarea">categoria</label>
+              <textarea class="form-control" id="exampleTextarea" rows="3" ng-model="$ctrl.up_categoria" placeholder="Digite aqui seu texto" > </textarea>
+            </div>
+            <div class="form-group">
+              <label for="exampleTextarea">Repetições</label>
+              <textarea class="form-control" id="exampleTextarea" rows="3" ng-model="$ctrl.up_repeticoes" placeholder="Digite aqui seu texto" > </textarea>
+            </div>
+            <div class="form-group">
+              <label for="exampleTextarea">Repitividade</label>
+              <textarea class="form-control" id="exampleTextarea" rows="3" ng-model="$ctrl.up_repetitividade" placeholder="Digite aqui seu texto" > </textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" id="submit" value="Submit" class="btn btn-primary">Submit</button>
+            </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
