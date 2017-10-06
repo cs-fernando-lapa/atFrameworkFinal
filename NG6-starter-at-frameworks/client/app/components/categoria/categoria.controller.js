@@ -1,35 +1,53 @@
-class CategoriaController {
-  constructor() {
-    this.tarefas = [
-      { nome: 'Varrer o quarto', categoria: 'Casa', feito: false },
-      { nome: 'Lavar a louça', categoria: 'Casa', feito: true },
-      { nome: 'Lavar as roupas', categoria: 'Casa', feito: false },
-      { nome: 'Consertar a porta', categoria: 'Casa', feito: false },
-      { nome: 'Terminar o relatório', categoria: 'Trabalho', feito: false },
-      { nome: 'Estudar para a próxima reunião', categoria: 'Trabalho', feito: false },
-      { nome: 'Enviar email sobre o problema', categoria: 'Trabalho', feito: false },
-      { nome: 'Levar pó de café', categoria: 'Trabalho', feito: true },
-      { nome: 'Comprar canetas novas', categoria: 'Trabalho', feito: true },
-      { nome: 'Estudar Etapa 1', categoria: 'Faculdade', feito: true },
-      { nome: 'Estudar Etapa 2', categoria: 'Faculdade', feito: true },
-      { nome: 'Estudar Etapa 3', categoria: 'Faculdade', feito: false },
-      { nome: 'Fazer TP1', categoria: 'Faculdade', feito: false }
-    ]
-
-    this.categorias = ['Casa', 'Trabalho', 'Faculdade'];
-
-    this.plusCategoria = function(){
-      this.categorias.push(this.categoria)
-    }
-
-    this.plusTarefa = function(){
-      this.tarefas.push({
-        nome:this.nome,
-        categoria:this.seleciona,
-        feito:false
-      })
-    }
+class categoriasController {
+  constructor(categoriasService, $q) {
+    this.q = $q
+    this.categoriasService = categoriasService
+    categoriasService.getCategorias()
+      .then( categorias => this.categorias = categorias );
   }
+    postCategoria(){
+      var data = Date.now();
+      this.categoriasService.postCategoria(this.nome, this.descricao, data)
+      .then (categoria => this.categorias = categoria.data)
+    }
+
+    delCategoria(id){
+      this.categoriasService.delCategoria(id)
+      .then(data => this.categoriasService.getCategorias())
+      .then((categorias) => this.categorias = categorias)
+    }
+
+    updateCategoria(id){
+      // carregar dados na categoriae em this.
+      this.nome = this.categorias.nome
+      var categoria = {};
+      for(var i=0; i< this.categorias.length; i++){
+        if(this.categorias[i].id == id){
+          categoria = this.categorias[i]
+          break
+        }
+      }
+      this.up_id = categoria.id
+      this.up_nome = categoria.nome
+      this.up_categoria = categoria.descricao
+    }
+
+    putCategoria(){
+      var data = Date.now();
+      this.categoriasService.putCategoria(this.nome, this.descricao, data)
+      .then(() => {
+        this.up_id = ''
+        this.up_nome = ''
+        this.up_descricao = ''
+        return this.q.resolve('')
+      })
+      .then(data => this.categoriasService.getCategorias())
+      .then(categorias => this.categorias = categorias)
+
+    }
 }
 
-export default CategoriaController;
+categoriasController.$inject = ['categoriasService', '$q'];
+
+
+export default categoriasController;

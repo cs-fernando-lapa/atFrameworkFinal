@@ -1,0 +1,8 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Nome: {{categoria.nome}}</div>
+  <div class="panel-body">
+    Descrição: {{categoria.descricao}}
+  </div>
+  <button type="button" class="btn btn-danger" name="Delete" ng-click="$ctrl.delCategoria(categoria.id)"> Delete</button>
+  <button type="button" class="btn btn-primary" name="Put" ng-click="$ctrl.updateCategoria(categoria.id)" data-toggle="modal" data-target="#myModal"> Atualizar </button>
+</div>
