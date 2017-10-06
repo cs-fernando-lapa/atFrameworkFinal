@@ -3,6 +3,7 @@ import uiRouter from 'angular-ui-router';
 import controller from './login.controller.js'
 import loginDirective from './login.directive.js'
 import loginComponent from './login.component.js'
+import loginService from './login.service.js'
 
 let loginModule = angular.module('login', [
   uiRouter
@@ -18,6 +19,7 @@ let loginModule = angular.module('login', [
     });
 })
 .component('login', loginComponent)
+.service('loginService', loginService)
 
 .name;
 

@@ -1,10 +1,24 @@
 class loginController {
-  constructor() {
-    this.noticia = [
-      { titulo: 'BitCoin', categoria: 'Finanças', feito: false },
-      { titulo: 'Crescimento financeiro', categoria: 'Finanças', texto: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum ' },
-      { titulo: 'Organização Financeira', categoria: 'Finanças', texto: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum ' },
-    ]
+  constructor(loginService, $q) {
+    this.q = $q;
+    this.loginService = loginService;
+    this.login = ''
+    this.senha = ''
   }
+
+  postLogin(){
+      this.loginService.postLogin(this.login, this.senha)
+      .then(() => {
+        localStorage.setItem('logado', true)
+        // go to pagina noticia
+      })
+      .catch(() => {
+        console.log("ERROR");
+        // NG USADO NAO ENCONTRADO
+      })
+  }
+
 }
+loginController.$inject = ['loginService', '$q'];
+
 export default loginController;

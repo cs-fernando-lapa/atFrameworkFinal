@@ -1,35 +1,35 @@
-<form name='userForm'>
+<form name='userForm' ng-submit="$ctrl.postLogin()">
   <div class="input-group">
-    <span class="input-group-addon" id="basic-addon1">EMAIL</span>
-    <input name="emailAddress"
-           ng-model="data.email"
-           ng-minlength="10"
+    <span class="input-group-addon" id="basic-addon1">Login</span>
+    <input name="login"
+           ng-model="$ctrl.login"
+           ng-minlength="2"
            ng-maxlength="30"
            required
-           type="email"
+           type="text"
            class="form-control"
            placeholder="Username"
            aria-describedby="basic-addon1">
   </div>
   <div class="input-group">
     <span class="input-group-addon" id="basic-addon1">PASSWORD</span>
-    <input ng-minlength="10" type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+    <input ng-minlength="1" ng-model="$ctrl.senha" type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
   </div>
 
   <br>
 
   <div ng-messages="userForm.emailAddress.$error">
       <div class='alert alert-danger' ng-message="required">
-        You forgot to enter your email address...
+        Você deve entrar com seu login
       </div>
       <div class='alert alert-danger' ng-message="minlength">
-        Your email address is too short...
+        Seu login está muito pequeno
       </div>
       <div class='alert alert-danger' ng-message="maxlength">
-        Your email address is too long...
+        Seu login está muito grande
       </div>
-      <div class='alert alert-danger' ng-message="email">
-        You did not enter your email address correctly...
+      <div class='alert alert-danger' ng-message="text">
+        Você não entrou com seu login corretamente
       </div>
   </div>
 

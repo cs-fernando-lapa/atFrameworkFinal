@@ -5,6 +5,7 @@ import storageService from './storage.service';
 import noticiasMock from './noticiasmock/noticiasmock';
 import lancamentoMock from './lancamentomock/lancamentomock';
 import categoriaMock from './categoriamock/categoriamock';
+import loginMock from './loginmock/loginmock';
 
 
 let appMockModule = angular.module('appMock', [
@@ -17,6 +18,7 @@ let appMockModule = angular.module('appMock', [
 .run(noticiasMock)
 .run(lancamentoMock)
 .run(categoriaMock)
+.run(loginMock)
 
 
 .name;
