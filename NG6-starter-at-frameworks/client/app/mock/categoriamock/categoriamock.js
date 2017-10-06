@@ -44,7 +44,7 @@ function categoriaMock($httpBackend, $log, storage) {
       if(categoriamock[i].id == _data.id)
       {
         categoriamock[i].nome = _data.nome;
-        categoriamock[i].categoria = _data.categoria;
+        categoriamock[i].descricao = _data.descricao;
 
         break;
       }

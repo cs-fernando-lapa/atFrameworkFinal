@@ -16,10 +16,9 @@ class categoriasService {
   }
 
   postCategoria(nome, descricao){
-    var data = Date.now();
       return  this.$http.post('/api/categoriamock', {
         nome,
-        descricao
+        descricao,
       })
     }
 
@@ -28,7 +27,6 @@ class categoriasService {
   }
 
   putCategoria(id, nome, descricao){
-    var data = Date.now();
     return this.$http.put('/api/categoriamock', {id, nome, descricao} )
   }
 }

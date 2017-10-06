@@ -9,10 +9,6 @@
           <label for="exampleInputEmail1">Descrição</label>
         <input type="text" class="form-control"  placeholder="Entre com o Descrição" ng-model="$ctrl.descricao">
         </div>
-        <div class="form-group">
-          <label >Valor</label>
-          <input type="text" class="form-control" placeholder="Valor" ng-model="$ctrl.valor">
-        </div>
         <button type="submit" id="submit" value="Submit" class="btn btn-primary">Submit</button>
     </form>
     <categoriadiv ng-repeat="categoria in $ctrl.categorias" categoria={{categoria}} />

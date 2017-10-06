@@ -29,12 +29,11 @@ class categoriasController {
       }
       this.up_id = categoria.id
       this.up_nome = categoria.nome
-      this.up_categoria = categoria.descricao
+      this.up_descricao = categoria.descricao
     }
 
     putCategoria(){
-      var data = Date.now();
-      this.categoriasService.putCategoria(this.nome, this.descricao, data)
+      this.categoriasService.putCategoria(this.up_id, this.up_nome, this.up_descricao)
       .then(() => {
         this.up_id = ''
         this.up_nome = ''
