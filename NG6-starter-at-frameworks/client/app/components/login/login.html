@@ -1,3 +1,4 @@
+<div class="">
 <form name='userForm' ng-submit="$ctrl.postLogin()">
   <div class="input-group">
     <span class="input-group-addon" id="basic-addon1">Login</span>
@@ -15,9 +16,7 @@
     <span class="input-group-addon" id="basic-addon1">PASSWORD</span>
     <input ng-minlength="1" ng-model="$ctrl.senha" type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
   </div>
-
   <br>
-
   <div ng-messages="userForm.emailAddress.$error">
       <div class='alert alert-danger' ng-message="required">
         Você deve entrar com seu login
@@ -32,7 +31,6 @@
         Você não entrou com seu login corretamente
       </div>
   </div>
-
   <button class='btn btn-primary' type='submit'> LOGAR </button>
-
 </form>
+</div>
