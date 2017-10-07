@@ -2,8 +2,8 @@ class loginController {
   constructor(loginService, $q) {
     this.q = $q;
     this.loginService = loginService;
-    this.login = ''
-    this.senha = ''
+    this.login = '';
+    this.senha = '';
   }
 
   postLogin(){
@@ -18,7 +18,6 @@ class loginController {
         // NG USADO NAO ENCONTRADO
       })
   }
-
 }
 loginController.$inject = ['loginService', '$q'];
 
