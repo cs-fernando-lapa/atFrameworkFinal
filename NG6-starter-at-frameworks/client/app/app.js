@@ -54,7 +54,7 @@ let appModule = angular.module('app', [
   })
   .run(function($rootScope, $state, $transitions){
     $rootScope.$on('unauthorized', () => {
-        $state.go('login');
+        $state.go('noticias');
     });
 
     $rootScope.$on('logoff', () => {

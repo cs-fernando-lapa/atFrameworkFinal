@@ -14,6 +14,7 @@ class loginController {
       })
       .catch(() => {
         console.log("ERROR");
+        alert('Login inválido')
         // NG USADO NAO ENCONTRADO
       })
   }
