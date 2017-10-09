@@ -5,6 +5,7 @@ import homeModule from './home/home';
 import lancamentoModule from './lancamento/lancamento';
 import loginModule from './login/login';
 import logoffModule from './logoff/logoff';
+import contaModule from './conta/conta';
 
 
 
@@ -15,6 +16,7 @@ let componentModule = angular.module('app.components', [
   lancamentoModule,
   loginModule,
   logoffModule,
+  contaModule
 ])
 
 .name;
