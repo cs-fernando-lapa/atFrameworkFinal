@@ -54,7 +54,7 @@ let appModule = angular.module('app', [
   })
   .run(function($rootScope, $state, $transitions){
     $rootScope.$on('unauthorized', () => {
-        $state.go('noticias');
+        $state.go('login');
     });
 
     $rootScope.$on('logoff', () => {
@@ -62,11 +62,15 @@ let appModule = angular.module('app', [
 
     });
 
+    $rootScope.$on('logged', () => {
+        $state.go('noticia');
+
+    });
+
     $transitions.onStart({}, function(event) {
       if(localStorage.getItem('logado') == null){ // we don't need validation for the very first step.
         console.log("ENTROU");
         $rootScope.$emit("unauthorized");
-        $state.go('login');
       }
     })
   })
